@@ -25,9 +25,7 @@ void inner_dil_reconstruction_3d(i3d::Image3d<img_t>& img,
 	i3d::Vector3d<std::size_t> size = img.GetSize();
 
 	bool change = true;
-	std::size_t iters = 1;
 	while (change) {
-		std::cout << "Iteration: " << iters << '\n';
 		change = false;
 
 		// forward pass
@@ -55,8 +53,6 @@ void inner_dil_reconstruction_3d(i3d::Image3d<img_t>& img,
 					change |= (img.GetVoxel(x, y, z) != new_val);
 					img.SetVoxel(x, y, z, new_val);
 				}
-
-		++iters;
 	}
 }
 
