@@ -26,10 +26,7 @@ int main(int argc, char** argv) {
 				marker.SetVoxel(x, y, z, min);
 	}
 
-	i3d::Image3d<i3d::GRAY16> out = marker;
+	i3d::Reconstruction_by_dilation_fast(marker, img, marker, 2);
 
-	i3d::Reconstruction_by_dilation_fast(marker, img, out, 2);
-	// i3d::Reconstruction_by_dilation(marker, img, out);
-
-	out.SaveImage(argv[2]);
+	marker.SaveImage(argv[2]);
 }
