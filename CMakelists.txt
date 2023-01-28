@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(i3d_fast_fillhole)
+set(CMAKE_CXX_STANDARD 20)
 
 if(WIN32)
   link_directories(${CMAKE_SOURCE_DIR}/i3dlibs/lib)
